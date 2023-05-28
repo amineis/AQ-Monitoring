@@ -53,8 +53,12 @@ dependencies {
     // OKHTTP
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
 
-    // GAUGE
+    // SWITCH
+    implementation 'androidx.appcompat:appcompat:1.6.1' // or a newer version
 
     // CARD-VIEW
     implementation "androidx.cardview:cardview:1.0.0"
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.9.0'
 }

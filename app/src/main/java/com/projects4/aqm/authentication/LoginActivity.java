@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.projects4.aqm.DashBoard;
 import com.projects4.aqm.FloorsList;
 import com.projects4.aqm.R;
 
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void updateUI(FirebaseUser currentUser) {
         if(currentUser != null){
             Toast.makeText(this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, FloorsList.class);
+            Intent intent = new Intent(this, DashBoard.class);
             startActivity(intent);
         }
     }
@@ -77,15 +78,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         });
             }
         }
-        else if(view.getId() == R.id.create_account){
-            Intent intent = new Intent(this, SignupActivity.class);
-            startActivity(intent);
-        }
-        else if(view.getId() == R.id.forgot_password){
-            Toast.makeText(this, "PASSWORD RESET", Toast.LENGTH_SHORT).show();
-        }
-    }
 
-    // FirebaseAuth.getInstance().signOut();
+        else if(view.getId() == R.id.create_account)
+            startActivity(new Intent(this, SignupActivity.class));
+
+        else if(view.getId() == R.id.forgot_password)
+            Toast.makeText(this, "PASSWORD RESET", Toast.LENGTH_SHORT).show();
+    }
 }
 

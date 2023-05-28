@@ -17,6 +17,15 @@
         tools:targetApi="31">
 
         <activity
+            android:name=".DetectOccupancy"
+            android:exported="false" />
+        <activity
+            android:name=".ControlPurifier"
+            android:exported="false" />
+        <activity
+            android:name=".DashBoard"
+            android:exported="false" />
+        <activity
             android:name=".AddRoom"
             android:exported="false" />
         <activity

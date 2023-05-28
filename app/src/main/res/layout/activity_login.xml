@@ -10,9 +10,9 @@
         android:id="@+id/top_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_bold"
         android:text="@string/login"
-        android:textColor="@color/tertiary"
+        android:textColor="@color/black_transparent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/welcome"
@@ -41,10 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/bariol_bold"
         android:gravity="center"
         android:text="@string/sign_in_to_your_account"
-        android:textColor="@color/tertiary"
+        android:textColor="@color/black_transparent"
         android:textSize="40sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,16 +69,16 @@
         android:textSize="16sp"
 
         app:endIconMode="clear_text"
-        app:endIconTint="@color/tertiary"
+        app:endIconTint="@color/black_transparent"
 
         app:helperText="Required*"
         app:helperTextTextColor="@color/DarkRed"
 
-        app:boxStrokeColor="@color/tertiary"
-        app:hintTextColor="@color/tertiary"
+        app:boxStrokeColor="@color/black_transparent"
+        app:hintTextColor="@color/black_transparent"
 
         app:startIconDrawable="@drawable/outline_email_24"
-        app:startIconTint="@color/tertiary"
+        app:startIconTint="@color/black_transparent"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,10 +91,9 @@
             android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="textEmailAddress"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,40 +105,37 @@
         android:layout_height="wrap_content"
 
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="40dp"
 
+        android:layout_marginEnd="32dp"
         android:fontFamily="serif-monospace"
         android:hint="@string/password"
-        android:textSize="20sp"
 
-        app:boxStrokeColor="@color/tertiary"
-        app:hintTextColor="@color/tertiary"
+        android:textSize="20sp"
+        app:boxStrokeColor="@color/black_transparent"
 
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/tertiary"
-
-        app:startIconDrawable="@drawable/outline_password_24"
-        app:startIconTint="@color/tertiary"
+        app:endIconTint="@color/black_transparent"
 
         app:helperText="Required*"
         app:helperTextTextColor="@color/DarkRed"
 
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:hintTextColor="@color/black_transparent"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailInputLayout"
-        app:layout_constraintVertical_bias="1.0">
+        app:startIconDrawable="@drawable/outline_password_24"
+        app:startIconTint="@color/black_transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="textPassword"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,17 +143,17 @@
         android:id="@+id/login_button"
         android:layout_width="111dp"
         android:layout_height="48dp"
-        android:backgroundTint="@color/tertiary"
-        android:fontFamily="serif-monospace"
+        android:backgroundTint="@color/black_transparent"
+        android:fontFamily="@font/bariol_bold"
         android:text="@string/login"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordInputLayout"
+        app:layout_constraintVertical_bias="0.205" />
 
     <TextView
         android:id="@+id/forgot_password"
@@ -165,7 +161,7 @@
         android:layout_height="50sp"
         android:clickable="true"
         android:focusable="true"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_bold"
         android:gravity="center"
         android:text="@string/forgotten_password"
         android:textSize="17sp"
@@ -184,7 +180,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_bold"
         android:text="@string/create_a_new_account"
         android:textSize="17sp"
         android:textStyle="bold"

@@ -11,9 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_bold"
         android:text="@string/sign_up"
-        android:textColor="@color/tertiary"
+        android:textColor="@color/black_transparent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,19 +36,16 @@
 
     <TextView
         android:id="@+id/welcome"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/bariol_bold"
         android:gravity="center"
         android:text="@string/account_creation"
-        android:textColor="@color/tertiary"
+        android:textColor="@color/black_transparent"
         android:textSize="40sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
@@ -63,34 +60,33 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
 
-        android:fontFamily="serif-monospace"
-        android:hint="@string/namea"
+        android:fontFamily="@font/bariol_regular"
+        android:hint="@string/username"
 
         android:textSize="16sp"
-        app:boxStrokeColor="@color/tertiary"
+        app:boxStrokeColor="@color/black_transparent"
 
         app:endIconMode="clear_text"
-        app:endIconTint="@color/tertiary"
+        app:endIconTint="@color/black_transparent"
 
         app:helperText="Required*"
         app:helperTextTextColor="@color/DarkRed"
 
-        app:hintTextColor="@color/tertiary"
+        app:hintTextColor="@color/black_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome"
         app:startIconDrawable="@drawable/person"
-        app:startIconTint="@color/tertiary">
+        app:startIconTint="@color/black_transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="text"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp"  />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,31 +101,30 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
 
-        android:fontFamily="serif-monospace"
-        android:hint="@string/businessa"
+        android:fontFamily="@font/bariol_regular"
+        android:hint="@string/address"
 
         android:textSize="16sp"
-        app:boxStrokeColor="@color/tertiary"
+        app:boxStrokeColor="@color/black_transparent"
 
         app:endIconMode="clear_text"
         app:helperTextTextColor="@color/DarkRed"
 
-        app:hintTextColor="@color/tertiary"
+        app:hintTextColor="@color/black_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameInputLayout"
         app:startIconDrawable="@drawable/business"
-        app:startIconTint="@color/tertiary">
+        app:startIconTint="@color/black_transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/org"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="text"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp"  />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,33 +139,32 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
 
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_regular"
         android:hint="@string/email"
 
         android:textSize="16sp"
-        app:boxStrokeColor="@color/tertiary"
+        app:boxStrokeColor="@color/black_transparent"
 
         app:endIconMode="clear_text"
-        app:endIconTint="@color/tertiary"
+        app:endIconTint="@color/black_transparent"
 
         app:helperText="Required*"
         app:helperTextTextColor="@color/DarkRed"
-        app:hintTextColor="@color/tertiary"
+        app:hintTextColor="@color/black_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/OrgInputLayout"
         app:startIconDrawable="@drawable/outline_email_24"
-        app:startIconTint="@color/tertiary">
+        app:startIconTint="@color/black_transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="textEmailAddress"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -185,33 +179,32 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
 
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_regular"
         android:hint="@string/password"
 
         android:textSize="20sp"
-        app:boxStrokeColor="@color/tertiary"
+        app:boxStrokeColor="@color/black_transparent"
 
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/tertiary"
+        app:endIconTint="@color/black_transparent"
 
         app:helperText="Required*"
         app:helperTextTextColor="@color/DarkRed"
-        app:hintTextColor="@color/tertiary"
+        app:hintTextColor="@color/black_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailInputLayout"
         app:startIconDrawable="@drawable/outline_password_24"
-        app:startIconTint="@color/tertiary">
+        app:startIconTint="@color/black_transparent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="@font/bariol_regular"
             android:inputType="textPassword"
-            android:textSize="16sp"
-            android:textStyle="bold|italic" />
+            android:textSize="16sp"  />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -220,8 +213,8 @@
         android:layout_width="143dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/tertiary"
-        android:fontFamily="serif-monospace"
+        android:backgroundTint="@color/black_transparent"
+        android:fontFamily="@font/bariol_regular"
         android:text="@string/sign_up_btn"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -234,12 +227,11 @@
         android:id="@+id/signin_button"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:clickable="true"
         android:drawablePadding="20sp"
         android:focusable="true"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/bariol_regular"
         android:gravity="center"
         android:text="@string/already_have_an_account"
         android:textAllCaps="true"
@@ -247,8 +239,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

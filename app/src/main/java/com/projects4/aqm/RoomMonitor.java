@@ -32,7 +32,7 @@ import java.sql.SQLException;
 
 public class RoomMonitor extends AppCompatActivity {
 
-    TextView title_field, co2_field, temp_field, hum_field, light_field, perc_field, comment;
+    TextView co2_field, temp_field, hum_field, light_field, perc_field, comment;
     ImageView prev, more;
     FirebaseDatabase db;
     ProgressBar pb;
@@ -93,10 +93,6 @@ public class RoomMonitor extends AppCompatActivity {
         light_field = findViewById(R.id.lux_value);
         perc_field = findViewById(R.id.perc_value);
         comment = findViewById(R.id.comment_value);
-
-        // Title
-        title_field = findViewById(R.id.title_value);
-        title_field.setText(title);
 
         // Getting Data from Firebase Realtime Database
         db = FirebaseDatabase.getInstance();
