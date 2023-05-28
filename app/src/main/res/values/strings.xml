@@ -54,4 +54,6 @@
     <string name="xxx">XXX</string>
     <string name="aqi">AQI</string>
     <string name="good_air_quality">GOOD AIR QUALITY</string>
+    <string name="air_quality_status">AIR QUALITY STATUS</string>
+    <string name="go_back">go back</string>
 </resources>
