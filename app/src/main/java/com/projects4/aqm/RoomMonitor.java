@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
@@ -57,6 +58,14 @@ public class RoomMonitor extends AppCompatActivity {
         
         // More Button
         more = findViewById(R.id.more);
+
+        try {
+            if(title.isEmpty()) more.setVisibility(View.GONE);
+        }
+        catch (Exception e){
+            more.setVisibility(View.GONE);
+        }
+
         more.setOnClickListener(view -> {
             Context context = this;
             PopupMenu popup = new PopupMenu(context, view);
@@ -80,6 +89,16 @@ public class RoomMonitor extends AppCompatActivity {
                     } catch (SQLException e) {
                         Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
+                }
+                else if(item.getItemId() == R.id.menu_predict){
+                    Toast.makeText(context, "Predicting Occupancy ...", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, DetectOccupancy.class);
+                    intent.putExtra("title", title);
+                    intent.putExtra("co2", co2_field.getText().toString());
+                    intent.putExtra("temp", temp_field.getText().toString());
+                    intent.putExtra("hum", hum_field.getText().toString());
+                    intent.putExtra("lux", light_field.getText().toString());
+                    startActivity(intent);
                 }
                 return false;
             });

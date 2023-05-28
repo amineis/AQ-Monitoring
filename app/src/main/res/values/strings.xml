@@ -75,7 +75,7 @@
     <string name="turn_on_off_the_fan">Turn on/off the fan</string>
     <string name="sign_out">Sign out</string>
     <string name="control_purifier">Control Purifier</string>
-    <string name="fan_stuatus_on">Fan Stuatus : ON</string>
+    <string name="fan_stuatus_on">Fan Stuatus : -</string>
     <string name="off">OFF</string>
     <string name="on">ON</string>
     <string name="fan_status">Fan Status</string>

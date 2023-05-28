@@ -32,7 +32,7 @@ import java.io.IOException;
 public class DetectOccupancy extends AppCompatActivity {
 
     EditText co2v, hum, temp, lux;
-    TextView occ;
+    TextView occ, title;
     Button ok;
     ImageView prev;
 
@@ -51,6 +51,27 @@ public class DetectOccupancy extends AppCompatActivity {
         temp = findViewById(R.id.ac);
         lux = findViewById(R.id.ad);
         occ = findViewById(R.id.output);
+        title = findViewById(R.id.welcome);
+
+        Intent intent = getIntent();
+        try {
+            if(intent.getStringExtra("title").isEmpty()){
+                co2v.setText("");
+                hum.setText("");
+                temp.setText("");
+                lux.setText("");
+            }
+            else {
+                co2v.setText(intent.getStringExtra("co2"));
+                hum.setText(intent.getStringExtra("hum"));
+                temp.setText(intent.getStringExtra("temp"));
+                lux.setText(intent.getStringExtra("lux"));
+                title.setText(intent.getStringExtra("title"));
+            }
+        }
+        catch (Exception e) {
+            Toast.makeText(context, "Fill in the fields to proceed!", Toast.LENGTH_SHORT).show();
+        }
 
         prev = findViewById(R.id.back);
         prev.setOnClickListener(view -> finish());
