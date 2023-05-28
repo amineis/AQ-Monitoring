@@ -2,15 +2,20 @@ package com.projects4.aqm;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +26,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.projects4.aqm.controller.RoomDaoImplementation;
+
+import java.sql.SQLException;
 
 public class RoomMonitor extends AppCompatActivity {
 
     TextView title_field, co2_field, temp_field, hum_field, light_field, perc_field, comment;
-    ImageView prev;
+    ImageView prev, more;
     FirebaseDatabase db;
     ProgressBar pb;
 
@@ -34,13 +42,50 @@ public class RoomMonitor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.overview);
 
+        // Intent Values 
+        String id = getIntent().getStringExtra("id");
+        String title = getIntent().getStringExtra("title");
+        String cp = getIntent().getStringExtra("capacity");
+        String sz = getIntent().getStringExtra("size");
+
         // ProgressBar
         pb = findViewById(R.id.progress_circular);
 
         // Back Button
         prev = findViewById(R.id.back);
         prev.setOnClickListener(view -> finish());
-
+        
+        // More Button
+        more = findViewById(R.id.more);
+        more.setOnClickListener(view -> {
+            Context context = this;
+            PopupMenu popup = new PopupMenu(context, view);
+            MenuInflater inflater = popup.getMenuInflater();
+            inflater.inflate(R.menu.edit_room_menu, popup.getMenu());
+            popup.setOnMenuItemClickListener(item -> {
+                if (item.getItemId() == R.id.menu_edit){
+                    Toast.makeText(context, "Updating element ...", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, UpdateRoom.class);
+                    intent.putExtra("id", id);
+                    intent.putExtra("title", title);
+                    intent.putExtra("capacity", cp);
+                    intent.putExtra("size", sz);
+                    context.startActivity(intent);
+                }
+                else if (item.getItemId() == R.id.menu_delete){
+                    Toast.makeText(context, "Deleting element ...", Toast.LENGTH_SHORT).show();
+                    try {
+                        new RoomDaoImplementation().delete(id);
+                        finish();
+                    } catch (SQLException e) {
+                        Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                return false;
+            });
+            popup.show();
+        });
+        
         // Fields in the Layout
         co2_field = findViewById(R.id.co2_value);
         temp_field = findViewById(R.id.temp_value);
@@ -51,7 +96,7 @@ public class RoomMonitor extends AppCompatActivity {
 
         // Title
         title_field = findViewById(R.id.title_value);
-        title_field.setText(getIntent().getStringExtra("title"));
+        title_field.setText(title);
 
         // Getting Data from Firebase Realtime Database
         db = FirebaseDatabase.getInstance();

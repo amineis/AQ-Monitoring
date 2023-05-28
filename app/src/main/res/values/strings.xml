@@ -56,4 +56,13 @@
     <string name="good_air_quality">GOOD AIR QUALITY</string>
     <string name="air_quality_status">AIR QUALITY STATUS</string>
     <string name="go_back">go back</string>
+    <string name="size_20_meters_squared">Size : 20 meters squared</string>
+    <string name="capacity_2_persons">Capacity : 2 persons</string>
+    <string name="view_more">View More…</string>
+    <string name="rooms_list">ROOMS LIST</string>
+    <string name="add_a_room">ADD A ROOM</string>
+    <string name="room_details">Room Details</string>
+    <string name="room_size">ROOM SIZE (m^2)</string>
+    <string name="room_capacity">ROOM CAPACITY</string>
+    <string name="room_update">ROOM UPDATE</string>
 </resources>

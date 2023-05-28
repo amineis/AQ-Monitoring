@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +36,8 @@ public class FloorsList extends AppCompatActivity implements View.OnClickListene
     ProgressDialog mProgressDialog;
     RoomDaoImplementation cda;
 
+    ImageView prev;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,8 @@ public class FloorsList extends AppCompatActivity implements View.OnClickListene
         barreRecherche = findViewById(R.id.search);
         fab_add = findViewById(R.id.fab_add);
         fab_add.setOnClickListener(this);
+        prev = findViewById(R.id.back);
+        prev.setOnClickListener(this);
 
         db = FirebaseFirestore.getInstance();
         mAuth= FirebaseAuth.getInstance();
@@ -85,8 +90,10 @@ public class FloorsList extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.fab_add){
-            Intent intent = new Intent(this, AddRoom.class);
-            startActivity(intent);
+            startActivity(new Intent(this, AddRoom.class));
+        }
+        if(view.getId() == R.id.back){
+            finish();
         }
     }
 

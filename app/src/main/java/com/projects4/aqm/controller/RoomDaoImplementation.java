@@ -16,13 +16,18 @@ public class RoomDaoImplementation implements RoomDao {
     }
 
     @Override
+    public Room get(String id) throws SQLException {
+        return model.get(id);
+    }
+
+    @Override
     public List<Room> getAll() {
         return model.getAll();
     }
 
     @Override
-    public void insert(String title) throws SQLException {
-        model.insert(title);
+    public void insert(Room room) throws SQLException {
+        model.insert(room);
     }
 
     @Override

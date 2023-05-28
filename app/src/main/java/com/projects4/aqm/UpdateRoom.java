@@ -2,7 +2,8 @@ package com.projects4.aqm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -17,27 +18,43 @@ import java.util.Objects;
 
 public class UpdateRoom extends AppCompatActivity {
 
-    TextInputEditText title;
-    TextView ok;
+    TextInputEditText title, size, capacity;
+    Button ok;
+    ImageView prev;
 
-    String id, text;
+    String id, text, cp, sz;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_room);
 
-        RoomDaoImplementation impl = new RoomDaoImplementation();
-
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         text = intent.getStringExtra("title");
+        cp = intent.getStringExtra("capacity");
+        sz = intent.getStringExtra("size");
+
+        RoomDaoImplementation impl = new RoomDaoImplementation();
 
         title = findViewById(R.id.title);
+        size = findViewById(R.id.size);
+        capacity = findViewById(R.id.capacity);
+
+        prev = findViewById(R.id.back);
+        prev.setOnClickListener(view -> finish());
+
         ok = findViewById(R.id.proceed);
         ok.setOnClickListener(view -> {
             try {
-                impl.update(new Room(id, Objects.requireNonNull(title.getText()).toString()));
+                impl.update(
+                        new Room(
+                            id,
+                            Objects.requireNonNull(title.getText()).toString(),
+                            Objects.requireNonNull(capacity.getText()).toString(),
+                            Objects.requireNonNull(size.getText()).toString()
+                        )
+                );
                 startActivity(new Intent(this, FloorsList.class));
             }
             catch (SQLException e) {
@@ -50,5 +67,7 @@ public class UpdateRoom extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         title.setText(text);
+        capacity.setText(cp);
+        size.setText(sz);
     }
 }

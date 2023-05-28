@@ -7,6 +7,19 @@
     android:background="@color/bottomNavigationBackground"
     tools:context=".RoomMonitor">
 
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/go_back"
+        android:padding="10dp"
+        android:src="@drawable/more"
+        card_view:layout_constraintBottom_toTopOf="@+id/card_view_1"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/textView2"
@@ -313,6 +326,8 @@
             android:textColor="#808080"
             android:text="@string/measurement_of_how_hot_or_cold_the_room_is"
             android:textSize="13sp" />
+
+
 
         <TextView
             android:layout_width="wrap_content"

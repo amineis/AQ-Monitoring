@@ -44,8 +44,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        String ms1 = "Capacity : " + rooms.get(position).getCapacity() + " persons",
+                ms2 = "Size : " + rooms.get(position).getSize() + " meters squared";
         holder.room = rooms.get(position);
         holder.identification.setText(rooms.get(position).getTitle());
+        holder.capacity.setText(ms1);
+        holder.size.setText(ms2);
     }
 
     @Override
@@ -55,12 +59,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         Room room;
-        public TextView identification;
+        public TextView identification, capacity, size;
         RoomDaoImplementation impl = new RoomDaoImplementation();
 
         public MyViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             identification = itemLayoutView.findViewById(R.id.identification);
+            capacity = itemLayoutView.findViewById(R.id.capacity);
+            size = itemLayoutView.findViewById(R.id.size);
             itemLayoutView.setOnClickListener(this);
             itemLayoutView.setOnLongClickListener(this);
         }
@@ -68,7 +74,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, RoomMonitor.class);
+            intent.putExtra("id", room.getId());
             intent.putExtra("title", room.getTitle());
+            intent.putExtra("capacity", room.getCapacity());
+            intent.putExtra("size", room.getSize());
             context.startActivity(intent);
         }
 
@@ -81,7 +90,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 if (item.getItemId()==R.id.menu_view){
                     Toast.makeText(context, "Viewing element ...", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, RoomMonitor.class);
+                    intent.putExtra("id", room.getId());
                     intent.putExtra("title", room.getTitle());
+                    intent.putExtra("capacity", room.getCapacity());
+                    intent.putExtra("size", room.getSize());
                     context.startActivity(intent);
                 }
                 else if (item.getItemId() == R.id.menu_edit){
@@ -89,6 +101,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     Intent intent = new Intent(context, UpdateRoom.class);
                     intent.putExtra("id", room.getId());
                     intent.putExtra("title", room.getTitle());
+                    intent.putExtra("capacity", room.getCapacity());
+                    intent.putExtra("size", room.getSize());
                     context.startActivity(intent);
                 }
                 else if (item.getItemId() == R.id.menu_delete){
