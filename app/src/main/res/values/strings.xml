@@ -39,4 +39,19 @@
     <string name="isfanenabled">isFanEnabled</string>
     <string name="light">Light</string>
     <string name="occupancy">Occupancy</string>
+    <string name="measurement_of_how_hot_or_cold_the_room_is">Measurement of how hot or cold the room is</string>
+    <string name="temp">Temperature</string>
+    <string name="hum">Humidity</string>
+    <string name="co2">CO2</string>
+    <string name="lighting">Lighting</string>
+    <string name="lux">lux</string>
+    <string name="ppm">ppm</string>
+    <string name="created_from_metabolic_activity_crowded_indicator">Created from metabolic activity - crowded indicator</string>
+    <string name="concentration_of_water_vapor_present_in_the_air">Concentration of water vapor present in the air</string>
+    <string name="measurement_of_light_which_quantifies_the_brightness">Measurement of light which quantifies the brightness</string>
+    <string name="perc">%</string>
+    <string name="c">°C</string>
+    <string name="xxx">XXX</string>
+    <string name="aqi">AQI</string>
+    <string name="good_air_quality">GOOD AIR QUALITY</string>
 </resources>

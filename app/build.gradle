@@ -51,8 +51,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
     // OKHTTP
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
 
     // GAUGE
-    implementation 'com.github.Gruzer:simple-gauge-android:0.3.1'
+
+    // CARD-VIEW
+    implementation "androidx.cardview:cardview:1.0.0"
 }

@@ -19,9 +19,6 @@
             android:name=".UpdateRoom"
             android:exported="false" />
         <activity
-            android:name=".RoomDetails"
-            android:exported="false" />
-        <activity
             android:name=".RoomMonitor"
             android:exported="false" />
         <activity
